@@ -1,0 +1,37 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+mainClassName = 'com.parser.commandLine.CommandLineInterface'
+
+jar {
+  manifest {
+    attributes(
+      'Class-Path': configurations.runtimeClasspath.files.collect { it.getName() }.join(' '),
+      'Main-Class': 'com.parser.commandLine.CommandLineInterface'
+    )
+  }
+}
+
+// tag::repositories[]
+repositories { 
+    mavenCentral() 
+}
+// end::repositories[]
+
+// tag::jar[]
+jar {
+    archiveBaseName = 'cron-parser'
+    archiveVersion =  '0.1.0'
+}
+// end::jar[]
+
+// tag::dependencies[]
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.3.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.3.2")    
+}
+
