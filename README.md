@@ -10,7 +10,8 @@ Cron Expression Parser to parse standard cron expressions.
 
 
 ## How to Run this CRON Parser ?
-* Unzip the folder 'CronExpParser.zip' into a local folder
+* Please make sure Java 8 or higher & Gradle 8 is setup on the host OS env
+* Clone this repo into your local
 * Go to root project folder for the above project in /CronExpParser
 * Run this command in root directory of project "./gradlew jar". This would compile and create a runnable java jar for our use in "CronExpParser\build\libs" folder with name "cron-parser-0.1.0.jar"
 * We can run this jar with this command -  `java -jar cron-parser-0.1.0.jar "*/15 0 1,15 * 1-5 /usr/bin/find"` `java -jar cron-parser-0.1.0.jar "<cron expression>"`
